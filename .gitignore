@@ -11,3 +11,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+*.swn
+*.swo
+*.swp
+
+
+.byebug_history
+
