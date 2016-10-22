@@ -33,5 +33,10 @@ module AudioApp
     config.generators do |g|
       g.orm :mongoid
     end
+
+    # Generator for rspec
+    config.generators do |g|
+      g.test_framework :rspec
+    end
   end
 end
