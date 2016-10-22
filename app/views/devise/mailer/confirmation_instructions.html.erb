@@ -1,0 +1,6 @@
+<p>Welcome <%= @email %>!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<% byebug  %>
+<a href=<%= url_for(host:'localhost:3000',controller:'devise_token_auth/confirmations',action:'show',confirmation_token:@token,redirect_url:"http://localhost:3000/") %> >Confirm</a> 
