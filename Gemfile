@@ -46,6 +46,15 @@ group :development, :test do
 
   # Rspec for testing
   gem 'rspec-rails', '~>3.5'
+
+  # Factory Girl for fixtures
+  gem 'factory_girl_rails'
+
+  # Faker for fake data
+  gem 'faker'
+
+  # Database cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
