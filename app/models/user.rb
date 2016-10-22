@@ -3,7 +3,7 @@ class User
   include Mongoid::Timestamps::Short
   devise :database_authenticatable, :recoverable,
          :trackable, :validatable, :registerable,
-         :omniauthable
+         :omniauthable, :confirmable
   include DeviseTokenAuth::Concerns::User
 
   # devise :omniauthable
