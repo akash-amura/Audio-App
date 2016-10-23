@@ -26,6 +26,9 @@ gem 'mongoid', '~> 5.1.0'
 gem 'bson_ext'
 
 
+# Enable CORS
+gem 'rack-cors', :require => 'rack/cors'
+
 # Authentication
 
 gem 'devise_token_auth', github: 'ybian/devise_token_auth', branch: 'mongoid'
