@@ -1,0 +1,79 @@
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.075599187s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.000553878s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.0005864609999999999s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.0005225389999999999s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.000606289s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.02976852s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.000603935s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.000504698s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"shanny.wintheiser@willms.name"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.00031855399999999997s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"shanny.wintheiser@willms.name"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000223513s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"b91f2efa8226ba77f48ae2de52b992e72a9fa2a5d64df193f56d84dac42e44b8"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000314747s
+MONGODB | localhost:27017 | audio_app_test.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('580b0e98d838e428d3cc6da4'), "encrypted_password"=>"$2a$04$gQtwsP8KjZb7xsT0qHfVxejV4udGBBT53Oyvv3f2UP96LnS.86XpK", "sign_in_count"=>0, "uid"=>"shanny.wintheiser@willms.name", "tokens"=>{}, "emai...
+MONGODB | localhost:27017 | audio_app_test.insert | SUCCEEDED | 0.187168423s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.016312051s
+MONGODB | localhost:27017 | audio_app_test.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{}, "limit"=>0}], "ordered"=>true}
+MONGODB | localhost:27017 | audio_app_test.delete | SUCCEEDED | 0.047438799000000004s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"jerrold.stoltenberg@ziemanngleichner.org"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.050607996999999995s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"jerrold.stoltenberg@ziemanngleichner.org"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000377334s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"1815402d67c8ea8015beee1578110bc0d32fa268b7ffec4710607d37dda8f59c"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.00031636800000000003s
+MONGODB | localhost:27017 | audio_app_test.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('580b0ea5d838e428eac1dd28'), "encrypted_password"=>"$2a$04$AA4NVq6gcbPRoNqPzi8lU.MX2e5IH7HLmPOMkbepQyf1g5n8DY/zC", "sign_in_count"=>0, "uid"=>"jerrold.stoltenberg@ziemanngleichner.org", "tokens"...
+MONGODB | localhost:27017 | audio_app_test.insert | SUCCEEDED | 0.00030841099999999997s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.001169598s
+MONGODB | localhost:27017 | audio_app_test.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{}, "limit"=>0}], "ordered"=>true}
+MONGODB | localhost:27017 | audio_app_test.delete | SUCCEEDED | 0.0006196s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"te@pollich.net"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000383594s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"te@pollich.net"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.00026884900000000004s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"a98d154f7b6715dc29ad64637e635cdb394666ba8d39d86d4ddf8c05c9a0b475"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.00036887899999999996s
+MONGODB | localhost:27017 | audio_app_test.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('580b0f05d838e429454029c9'), "encrypted_password"=>"$2a$04$SZtTNm6ttFU0EzK/Xt08W.jCeqsk3AxN0xiF7vrO.Py2F/nqpNz7G", "sign_in_count"=>0, "uid"=>"te@pollich.net", "tokens"=>{}, "email"=>"te@pollich...
+MONGODB | localhost:27017 | audio_app_test.insert | SUCCEEDED | 0.00034670999999999997s
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_test.listCollections | STARTED | {"listCollections"=>1, "cursor"=>{}, "filter"=>{:name=>{"$not"=>/system\.|\$/}}}
+MONGODB | localhost:27017 | audio_app_test.listCollections | SUCCEEDED | 0.000563472s
+MONGODB | localhost:27017 | audio_app_test.delete | STARTED | {"delete"=>"users", "deletes"=>[{"q"=>{}, "limit"=>0}], "ordered"=>true}
+MONGODB | localhost:27017 | audio_app_test.delete | SUCCEEDED | 0.00036487s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>""}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000355667s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>""}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.00026104s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"f1966074ed0d78fe1c2723d1fdd6b7375666c1731608b96dafad74cbedd7ece1"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000309401s
+MONGODB | localhost:27017 | audio_app_test.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('580b0fdad838e429d1beeebe'), "encrypted_password"=>"$2a$04$.kmFfxxT869ynPUpIvQHA.JoBZ7qx5a1hbqp0VaIvJnZRJj.ggjz6", "sign_in_count"=>0, "uid"=>"", "tokens"=>{}, "email"=>"", "u_at"=>2016-10-22 07...
+MONGODB | localhost:27017 | audio_app_test.insert | SUCCEEDED | 0.000303445s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"geraldine_nitzsche@padberg.net"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000729375s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"geraldine_nitzsche@padberg.net"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.00026925800000000003s
+MONGODB | localhost:27017 | audio_app_test.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"616d71985dd2c4d88ff6bf5f329a51b943cca0a9c2f69cc10b9cc70bb8756559"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_test.find | SUCCEEDED | 0.000282226s
+MONGODB | localhost:27017 | audio_app_test.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('580b0fdad838e429d1beeebf'), "encrypted_password"=>"$2a$04$DY.5vw9zhXhfjkAJktO1VOG964VwNoND3Bf4Krlg0wa.5PtdaVM3q", "sign_in_count"=>0, "uid"=>"geraldine_nitzsche@padberg.net", "tokens"=>{}, "ema...
+MONGODB | localhost:27017 | audio_app_test.insert | SUCCEEDED | 0.000341177s
