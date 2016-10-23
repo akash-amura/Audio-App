@@ -33,5 +33,23 @@ module AudioApp
     config.generators do |g|
       g.orm :mongoid
     end
+
+    # Generator for rspec
+    config.generators do |g|
+      g.test_framework :rspec
+    end
+
+    # Enable CORS
+    # TODO: Dangerous! Allow only whitelisted domains
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*',
+          :headers => :any,
+          :expose  => ['access-token', 'expiry', 'token-type', 'uid', 'client'],
+          :methods => [:get, :post, :options, :delete, :put]
+      end
+     end
+
   end
 end

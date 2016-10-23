@@ -25,6 +25,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'mongoid', '~> 5.1.0'
 gem 'bson_ext'
 
+
+# Enable CORS
+gem 'rack-cors', :require => 'rack/cors'
+
+# Authentication
+
+gem 'devise_token_auth', github: 'ybian/devise_token_auth', branch: 'mongoid'
+gem 'omniauth-github', github: 'intridea/omniauth-github'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -40,6 +49,15 @@ group :development, :test do
 
   # Rspec for testing
   gem 'rspec-rails', '~>3.5'
+
+  # Factory Girl for fixtures
+  gem 'factory_girl_rails'
+
+  # Faker for fake data
+  gem 'faker'
+
+  # Database cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
