@@ -9,6 +9,7 @@ define([
     var welcomeView = WelcomeView.initialize();
     var welcomeView = new welcomeView();
 
+
     var WelcomeController = Marionette.Controller.extend({
       initialize: function(){
       },

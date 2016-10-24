@@ -15,7 +15,7 @@ define([
       //Routers go here
       welcomeroutes = new welcomeRouter();
       //histroy
-      Backbone.history.start();
+      Backbone.history.start({pushState:true});
     });
 
     return app;

@@ -6,7 +6,8 @@ require.config({
     marionette: 'libs/backbone.marionette',
     wreqr: 'libs/backbone.wreqr',
     babysitter: 'libs/backbone.babysitter',
-    templates: '../templates'
+    templates: '../templates',
+    bootstrap:'libs/bootstrap/dist/js/bootstrap'
   },
 
   shim:{
@@ -25,13 +26,18 @@ require.config({
     "marionette":{
       deps:["backbone","wreqr","babysitter"],
       exports:"Marionette"
+    },
+    "bootstrap":{
+      deps:["jquery"],
     }
 
   }
 });
 
-require(['app'],function(App){
+require(['jquery','app','bootstrap'],function($,App){
 
-  App.initialize().start();
+  $(document).ready(function(){
+    App.initialize().start();
+  });
 
 });
