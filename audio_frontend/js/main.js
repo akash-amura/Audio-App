@@ -1,43 +1,48 @@
 require.config({
-  paths:{
-    jquery:'libs/jquery/dist/jquery',
-    underscore:'libs/underscore/underscore',
-    backbone: 'libs/backbone/backbone',
-    marionette: 'libs/backbone.marionette',
-    wreqr: 'libs/backbone.wreqr',
-    babysitter: 'libs/backbone.babysitter',
-    templates: '../templates',
-    bootstrap:'libs/bootstrap/dist/js/bootstrap'
-  },
+	paths: {
+		underscore: '../bower_components/underscore/underscore',
+		backbone: '../bower_components/backbone/backbone',
+		marionette: '../bower_components/backbone.marionette/lib/backbone.marionette',
+		jquery: '../bower_components/jquery/jquery',
+		localStorage: '../bower_components/backbone.localStorage/backbone.localStorage',
+    bootstrap: 'lib/bootstrap.min',
+    templates: '../templates'
+	},
 
-  shim:{
+	shim: {
+		underscore: {
+			exports: '_'
+		},
 
-    "jquery":{
-      exports: "$"
-    },
-    "underscore":{
-      exports: "_"
+		backbone: {
+			exports: 'Backbone',
+			deps: ['jquery', 'underscore']
+		},
 
-    },
-    "backbone":{
-      deps:["underscore","jquery"],
-      exports: "Backbone"
-    },
-    "marionette":{
-      deps:["backbone","wreqr","babysitter"],
-      exports:"Marionette"
-    },
-    "bootstrap":{
-      deps:["jquery"],
+		marionette: {
+			exports: 'Backbone.Marionette',
+			deps: ['backbone']
+		},
+
+    bootstrap: {
+      deps: ['jquery']
     }
 
-  }
+	},
+    waitSeconds: 60
 });
 
-require(['jquery','app','bootstrap'],function($,App){
+require([
+	'app',
+  'modules/Pages',
+  'jquery',
+	'bootstrap'
+], function (app, PagesModule) {
+	'use strict';
 
-  $(document).ready(function(){
-    App.initialize().start();
-  });
+   app.addInitializer(function() {
+     PagesModule.start();
+   });
 
+   app.start();
 });
