@@ -13,9 +13,9 @@ define([
 	return Marionette.ItemView.extend({
     template: _.template(BasicTemplate),
     triggers:{
-     'click #profile':'some:head'
+     'click #profile':'show:profile'
     },
-    onSomeHead: function(event){
+    onShowProfile: function(event){
       alert('show profile and its settings!');
     },
     onRender:function(){
@@ -27,7 +27,6 @@ define([
         selector.find("#navbar-items-left").append("<li><a href=\"#\">"+element+"</a></li>");
       });
       selector.find("#navbar-items-right").append("<li><a href=\"#\" id=\"profile\">Profile</a></li>");
-
       $("body").append(this.$el);
     }
 	});

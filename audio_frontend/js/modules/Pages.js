@@ -4,8 +4,8 @@
 define([
     'app',
     'marionette',
-    'routers/index',
-    'controllers/index'
+    'routers/pagesRouter',
+    'controllers/pagesController'
 ], function(app, Marionette, Router, Controller){
     console.log('Module:Pages => Loading...');
     var PagesModule = app.module("Pages", function(Pages) {
