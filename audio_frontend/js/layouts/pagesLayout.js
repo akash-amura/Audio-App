@@ -1,15 +1,21 @@
 define([
+    'underscore',
+    'jquery',
     'marionette',
     'text!templates/basic_template.html'
-],function(Marionette,BasicTemplate){
+],function(_, $, Marionette, BasicTemplate){
 
-  return Marionette.Layout.extend({
-    template:_.template(BasicTemplate),
-
+   return Marionette.Layout.extend({
+    template:"#body-content",
+    el: "body",
     regions:{
       header: "#header",
       footer: "#footer",
       main: "#main"
-    }
+    },
+
+    onRender: function(){
+      console.log('in layout render');
+    },
   });
 });

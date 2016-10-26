@@ -1,5 +1,5 @@
 body {
-  min-height: 2000px;
+  /*min-height: 2000px;*/
   padding-top: 70px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
@@ -31,7 +31,7 @@ html {
 .navbar-brand{
   padding-top:0px;
 }
-
+/*
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -65,4 +65,23 @@ html {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+*/
+
+body { 
+ background: url('/imgs/images.jpg') no-repeat center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ image-rendering: pixelated;
+}
+
+.panel-default {
+ opacity: 0.9;
+ margin-top:10%;
+}
+
+.form-group.last {
+ margin-bottom:0px;
 }

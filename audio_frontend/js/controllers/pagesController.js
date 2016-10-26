@@ -3,23 +3,35 @@ define([
   'jquery',
 	'app',
   'marionette',
-  'views/pages/PageView',
   'views/pages/signInView',
+  'views/pages/signUpView',
   'layouts/pagesLayout'
-], function ($ ,app, Marionette, PageView,SignInView,PageLayout) {
+], function ($ ,app, Marionette, SignInView, SignUpView, PageLayout) {
 	'use strict';
 
   var pagesController = Marionette.Controller.extend({
       index: function() {
         console.log('In route /');
-        var pageView = new PageView();
-        window.logged_in = false;
-        //pageView.render();
         var pageLayout = new PageLayout();
         console.log(pageLayout);
-        console.log(pageLayout.render());
+        pageLayout.render();
+        var signInView = new SignInView();
+        var signUpView = new SignUpView();
+        signInView.on("submit:signIn",function(args){
+          alert('click!');
+        });
+        signInView.on("goto:register",function(args){
+          pageLayout.main.show(signUpView);
+        });
 
-        pageLayout.main.show(new SignInView());
+        signUpView.on("submit:signUp",function(args){
+          alert('click!');
+        });
+        signUpView.on("goto:login",function(args){
+          pageLayout.main.show(signInView);
+        });
+        pageLayout.main.show(signInView);
+        console.log(pageLayout);
       }
   });
 
