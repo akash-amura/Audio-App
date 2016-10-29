@@ -17,6 +17,11 @@ define([
 
     onShow: function(){
       console.log('in on show');
-    }
+    },
+
+    onGotoRegister: function(){
+      console.log('click!');
+      Backbone.history.navigate('register',{trigger:true});
+    },
   });
 });

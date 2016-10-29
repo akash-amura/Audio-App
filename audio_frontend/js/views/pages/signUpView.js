@@ -10,15 +10,18 @@ define([
       "click #sign-up-submit":"submit:signUp",
       "click #login-link":"goto:login"
     },
-    onSubmitSignIn: function(event){
-      alert('click!');
-    },
+
     onRender: function(){
       console.log('in on render');
     },
 
     onShow: function(){
       console.log('in on show');
-    }
+    },
+
+    onGotoLogin: function(){
+      console.log('click!');
+      Backbone.history.navigate('/',{trigger:true});
+    },
   });
 });

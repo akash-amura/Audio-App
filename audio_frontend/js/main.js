@@ -6,7 +6,11 @@ require.config({
 		jquery: '../bower_components/jquery/jquery',
 		localStorage: '../bower_components/backbone.localStorage/backbone.localStorage',
     bootstrap: 'lib/bootstrap.min',
-    templates: '../templates'
+    templates: '../templates',
+    'jquery.cookie': '../bower_components/lib/jquery.cookie',
+    'jquery-deparam':'../bower_components/lib/jquery-deparam',
+    'pubsub-js':'../bower_components/lib/pubsub',
+    'jToker':'../bower_components/lib/jquery.j-toker'
 	},
 
 	shim: {
@@ -26,22 +30,31 @@ require.config({
 
     bootstrap: {
       deps: ['jquery']
+    },
+
+    'jToker':{
+      deps:['jquery','jquery.cookie','jquery-deparam','pubsub-js'],
+      exports:'jToker'
     }
+
 
 	},
     waitSeconds: 60
 });
 
 require([
+  'jToker',
 	'app',
   'modules/Pages',
   'jquery',
 	'bootstrap'
-], function (app, PagesModule) {
+], function (x,app, PagesModule) {
 	'use strict';
 
+   console.log(x);
    app.addInitializer(function() {
      PagesModule.start();
+     Backbone.history.start({pushState:true});
    });
 
    app.start();
