@@ -14,6 +14,7 @@ define([
   var pagesController = Marionette.Controller.extend({
       index: function() {
         console.log('In route /');
+        console.log($.auth);
         pageLayout.render();
         var signInView = new SignInView();
         pageLayout.main.show(signInView);

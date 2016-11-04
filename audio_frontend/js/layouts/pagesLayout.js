@@ -11,7 +11,8 @@ define([
     regions:{
       header: "#header",
       footer: "#footer",
-      main: "#main"
+      main: "#main",
+      message: "#message"
     },
 
     onRender: function(){

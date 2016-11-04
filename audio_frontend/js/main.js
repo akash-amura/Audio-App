@@ -44,14 +44,15 @@ require.config({
 
 require([
   'jToker',
+  'pubsub-js',
 	'app',
   'modules/Pages',
   'jquery',
 	'bootstrap'
-], function (x,app, PagesModule) {
+], function (Auth,PubSub,app, PagesModule) {
 	'use strict';
 
-   console.log(x);
+
    app.addInitializer(function() {
      PagesModule.start();
      Backbone.history.start({pushState:true});

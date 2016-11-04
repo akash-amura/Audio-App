@@ -3437,3 +3437,658 @@ resolution:
   Rendered /home/amura/.rvm/gems/ruby-2.3.0@audio_app/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /home/amura/.rvm/gems/ruby-2.3.0@audio_app/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
   Rendered /home/amura/.rvm/gems/ruby-2.3.0@audio_app/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (44.2ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 20:23:58 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"test", "email"=>"test1+user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8018/"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | Adding localhost:27017 to the cluster.
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test1+user@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.001643256s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test1+user@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00035078100000000004s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test1+user@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000249069s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"b94cbd29d5cf1b1e1425c5f23832737e51d0601deb320960fefe981086a24a6c"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00035311399999999997s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5814b807d838e4272ac11e12'), "encrypted_password"=>"$2a$10$e3E0cxP1iXVazYBnRShGk.0AHq91seLdOwxRTlLF1YypbHkBn99x2", "sign_in_count"=>0, "uid"=>"test1+user@example.com", "tokens"=>{}, "email"=>"te...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.475904354s
+  Rendered devise/mailer/confirmation_instructions.html.erb (2.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 925.3ms
+
+Sent mail to test1+user@example.com (24.0ms)
+Date: Sat, 29 Oct 2016 20:24:00 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: test1+user@example.com
+Message-ID: <5814b80876467_272a2143f78728f8@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8018/
+
+<p>Welcome test1+user@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=t4asyjS7-BhTRxNeFpCx&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 1896ms (Views: 0.4ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2016-10-29 20:24:00 +0530
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test1+user@example.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test1+user@example.com", "provider"=>"email"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.020316751s
+Completed 401 Unauthorized in 123ms (Views: 0.3ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 20:25:17 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"name"=>"test", "email"=>"test2+user@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8018/"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test2+user@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.0012918860000000001s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test2+user@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000424317s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000455492s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"b0ab27b00685da44c227fd8efb172883b549e2d1dade250cc2a49f588c5bdd0b"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0014622399999999999s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "encrypted_password"=>"$2a$10$hR2sZbruHd/7UkPN4wri2uA2cMw4UfjGNrMqX/RfOZWdS2UcA94Z.", "sign_in_count"=>0, "uid"=>"test2+user@example.com", "tokens"=>{}, "email"=>"te...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.0006109220000000001s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.5ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 12.3ms
+
+Sent mail to test2+user@example.com (371.1ms)
+Date: Sat, 29 Oct 2016 20:25:17 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: test2+user@example.com
+Message-ID: <5814b855d03ee_272a1be8ed4729b0@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8018/
+
+<p>Welcome test2+user@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=fuer4g5j_1nkHrcDFzMF&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 502ms (Views: 0.4ms)
+
+
+Started GET "/auth/confirmation?confirmation_token=fuer4g5j_1nkHrcDFzMF&redirect_url=http%3A%2F%2Flocalhost%3A3000%2F" for 127.0.0.1 at 2016-10-29 20:25:28 +0530
+Processing by DeviseTokenAuth::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"fuer4g5j_1nkHrcDFzMF", "redirect_url"=>"http://localhost:3000/"}
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"b0ab27b00685da44c227fd8efb172883b549e2d1dade250cc2a49f588c5bdd0b"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0005189s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"confirmation_token"=>nil, "confirmed_at"=>2016-10-29 14:55:28 UTC, "u_at"=>2016-10-29 14:55:28 UTC}}, "multi"=>false, "upsert"=>false}], "ordere...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000487515s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"confirmation_token"=>"fuer4g5j_1nkHrcDFzMF", "tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw2...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.0006157059999999999s
+Redirected to http://localhost:3000/#?account_confirmation_success=true&client_id=IcGmhFYKGPbTo3O51eGX1A&config=&expiry=1478962528&token=xrdviaRW9x7tzs2R46tspw&uid=test2%2Buser%40example.com
+Completed 302 Found in 165ms
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-29 20:25:28 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/amura/.rvm/gems/ruby-2.3.0@audio_app/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.7ms)
+Completed 200 OK in 17ms (Views: 16.3ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2016-10-29 20:25:47 +0530
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test1+user@example.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test1+user@example.com", "provider"=>"email"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000806663s
+Completed 401 Unauthorized in 106ms (Views: 0.4ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2016-10-29 20:27:00 +0530
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2+user@example.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com", "provider"=>"email"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0007753419999999999s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00041398199999999997s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"last_sign_in_at"=>2016-10-29 14:57:00 UTC, "current_sign_in_at"=>2016-10-29 14:57:00 UTC, "last_sign_in_ip"=>"127.0.0.1", "current_sign_in_ip"=>...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000387692s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:27:00 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:27:00 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.06347035599999999s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00117425s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000814256s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00044742800000000004s
+Completed 200 OK in 383ms (Views: 0.3ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:27:56 +0530
+
+
+Started OPTIONS "/auth/sign_in" for 127.0.0.1 at 2016-10-29 20:27:56 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:27:56 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000500841s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:27:56 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:27:56 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000539945s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00037037699999999997s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00044055s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000460449s
+Completed 200 OK in 196ms (Views: 0.4ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2016-10-29 20:27:56 +0530
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test2+user@example.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com", "provider"=>"email"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000747259s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00048383599999999997s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"current_sign_in_at"=>2016-10-29 14:57:56 UTC, "sign_in_count"=>2, "u_at"=>2016-10-29 14:57:56 UTC}}, "multi"=>false, "upsert"=>false}], "ordered...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000617007s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:27:56 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:27:56 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.0014873999999999998s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000805453s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000467173s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000493696s
+Completed 200 OK in 307ms (Views: 0.6ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:28:17 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000688815s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:28:17 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:28:17 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000564107s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000413677s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000468997s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000365649s
+Completed 200 OK in 198ms (Views: 0.3ms)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2016-10-29 20:28:17 +0530
+Processing by DeviseTokenAuth::SessionsController#create as */*
+  Parameters: {"email"=>"test1+user@example.com", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test1+user@example.com", "provider"=>"email"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000521272s
+Completed 401 Unauthorized in 96ms (Views: 0.2ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:36:52 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0007831509999999999s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:36:52 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:36:52 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000527079s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000368465s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000424336s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000343743s
+Completed 200 OK in 198ms (Views: 0.3ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:43:50 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:43:50 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0006753699999999999s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:43:50 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:43:50 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000517197s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00041933300000000003s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000529329s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000449162s
+Completed 200 OK in 197ms (Views: 0.3ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:44:20 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:44:20 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000735937s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:44:20 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:44:20 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000500252s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000391053s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000418103s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00046925s
+Completed 200 OK in 197ms (Views: 0.3ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:45:40 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000620035s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:45:40 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:45:40 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.0006745960000000001s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000557509s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000454397s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000451395s
+Completed 200 OK in 200ms (Views: 1.4ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:46:45 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.001908276s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:46:45 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:46:45 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000589758s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000498829s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00047338800000000004s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000378246s
+Completed 200 OK in 201ms (Views: 0.4ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:46:47 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000670883s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:46:47 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:46:47 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000555093s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000507584s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00041934700000000004s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00036901800000000004s
+Completed 200 OK in 108ms (Views: 0.4ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:46:57 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000780128s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:46:58 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:46:58 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00050036s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000368039s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000487495s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00034593s
+Completed 200 OK in 198ms (Views: 0.4ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:48:50 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000544995s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:48:50 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:48:50 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000512891s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000416705s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000420518s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000337608s
+Completed 200 OK in 195ms (Views: 0.4ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:49:16 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000772239s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:49:16 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:49:16 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000765815s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.001222123s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00044360499999999997s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000345159s
+Completed 200 OK in 209ms (Views: 0.6ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:49:47 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.001244265s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:49:47 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:49:47 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000690147s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000612398s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00053188s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.0006013819999999999s
+Completed 200 OK in 217ms (Views: 0.7ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:52:57 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000776233s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:52:57 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:52:57 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00075969s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0005860360000000001s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00042618399999999997s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000318977s
+Completed 200 OK in 207ms (Views: 0.8ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:53:32 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:53:33 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000865247s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:53:33 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:53:33 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000593548s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000624477s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000499465s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000419449s
+Completed 200 OK in 202ms (Views: 0.4ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:57:12 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:57:12 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000989069s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:57:12 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:57:12 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000494078s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000425888s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000562193s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00035189s
+Completed 200 OK in 200ms (Views: 0.3ms)
+
+
+Started OPTIONS "/auth" for 127.0.0.1 at 2016-10-29 20:57:27 +0530
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 20:57:27 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"qweqwe", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"qweqwe"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000455016s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"qweqwe"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00040033200000000004s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"qweqwe"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000385538s
+Completed 403 Forbidden in 108ms (Views: 1.0ms)
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-29 20:58:03 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0007814650000000001s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-29 20:58:03 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-29 20:58:03 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.0005798929999999999s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00048571000000000004s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000607756s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.0006586150000000001s
+Completed 200 OK in 212ms (Views: 0.7ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 20:58:11 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"weqqw", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"weqqw"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000365713s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"weqqw"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000308952s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"weqqw"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000302618s
+Completed 403 Forbidden in 101ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 20:59:36 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"test3+user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test3+user@gmail.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000389057s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test3+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00034664s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test3+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000344912s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"87c41e1a64b0fe3fd2765670263a2adfb2e106bbd51dc210d732d33ee12d499f"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00036627400000000004s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5814c060d838e4272ac11e16'), "encrypted_password"=>"$2a$10$QvW2CADmUia9l7RjVZqdEuXd1klXB5joir0mvHs6lZZJooYdk3S.a", "sign_in_count"=>0, "uid"=>"test3+user@gmail.com", "tokens"=>{}, "email"=>"test...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.000400133s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 8.7ms
+
+Sent mail to test3+user@gmail.com (6.1ms)
+Date: Sat, 29 Oct 2016 20:59:36 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: test3+user@gmail.com
+Message-ID: <5814c060a291a_272a3f8538246e8473033@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8021/register
+
+<p>Welcome test3+user@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=PetACUwRfXWDHMWz-vj_&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 121ms (Views: 0.4ms)
+
+
+Started GET "/auth/confirmation?confirmation_token=PetACUwRfXWDHMWz-vj_&redirect_url=http%3A%2F%2Flocalhost%3A3000%2F" for 127.0.0.1 at 2016-10-29 21:00:22 +0530
+Processing by DeviseTokenAuth::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"PetACUwRfXWDHMWz-vj_", "redirect_url"=>"http://localhost:3000/"}
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"87c41e1a64b0fe3fd2765670263a2adfb2e106bbd51dc210d732d33ee12d499f"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0006066849999999999s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814c060d838e4272ac11e16')}, "u"=>{"$set"=>{"confirmation_token"=>nil, "confirmed_at"=>2016-10-29 15:30:22 UTC, "u_at"=>2016-10-29 15:30:22 UTC}}, "multi"=>false, "upsert"=>false}], "ordere...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000626166s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814c060d838e4272ac11e16')}, "u"=>{"$set"=>{"confirmation_token"=>"PetACUwRfXWDHMWz-vj_", "tokens"=>{"hWkAnz5vR-MpR1KePrvidg"=>{"token"=>"$2a$10$ZeAdrTkPM5FdwAQzqSKF8.WNYWADNk6hKe2xUsXSnD0t...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000428808s
+Redirected to http://localhost:3000/#?account_confirmation_success=true&client_id=hWkAnz5vR-MpR1KePrvidg&config=&expiry=1478964623&token=KJb8YPKuZYgEhpZ2p6j1PQ&uid=test3%2Buser%40gmail.com
+Completed 302 Found in 107ms
+
+
+Started GET "/" for 127.0.0.1 at 2016-10-29 21:00:23 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/amura/.rvm/gems/ruby-2.3.0@audio_app/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 1.7ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 21:02:34 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"test3+user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test3+user@gmail.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.00036435499999999996s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test3+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00030143799999999996s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test3+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000335627s
+Completed 403 Forbidden in 102ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-29 21:03:00 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"test3+user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test3+user@gmail.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000378926s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test3+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00036427000000000003s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test3+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000362874s
+Completed 403 Forbidden in 102ms (Views: 0.6ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-30 02:05:36 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-30 02:05:36 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0011664759999999998s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-30 02:05:36 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-30 02:05:36 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000563849s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000395633s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00047594200000000003s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.00035778000000000003s
+Completed 200 OK in 195ms (Views: 0.4ms)
+
+
+Started OPTIONS "/auth" for 127.0.0.1 at 2016-10-30 02:05:55 +0530
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-30 02:05:55 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"test4+user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test4+user@gmail.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000395757s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test4+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000332248s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test4+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000291125s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"a79eff54e70475c4e99672c9da16f3c104b81d49e73d52481b01a5db41e4b719"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000314881s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('5815082bd838e4272ac11e19'), "encrypted_password"=>"$2a$10$ockmBV4Ygq7qL2ymBTFj8.a69NjwMaIrTO9z/It/U/MjmerDqztM6", "sign_in_count"=>0, "uid"=>"test4+user@gmail.com", "tokens"=>{}, "email"=>"test...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.00031117499999999996s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 8.0ms
+
+Sent mail to test4+user@gmail.com (5.2ms)
+Date: Sun, 30 Oct 2016 02:05:55 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: test4+user@gmail.com
+Message-ID: <5815082b397ba_272a3f85384894bc731b5@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8021/register
+
+<p>Welcome test4+user@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=Fn_g68-Nu-RzoiMy5hn2&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 123ms (Views: 0.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-10-30 02:06:45 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"test4+user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8021/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"test4+user@gmail.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000352626s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"test4+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000393993s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test4+user@gmail.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000306861s
+Completed 403 Forbidden in 105ms (Views: 0.6ms)
+
+
+Started OPTIONS "/auth/validate_token" for 127.0.0.1 at 2016-10-30 02:37:15 +0530
+
+
+Started GET "/auth/validate_token" for 127.0.0.1 at 2016-10-30 02:37:15 +0530
+Processing by DeviseTokenAuth::TokenValidationsController#validate_token as */*
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"test2+user@example.com"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.001134971s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13'), "$or"=>[{"locked_until"=>nil}, {"locked_until"=>{"$lte"=>2016-10-30 02:37:15 +0530}}]}, "u"=>{"$set"=>{:locked_at=>2016-10-30 02:37:15 +0530, :locked_until=>2016...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.001254209s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0005017110000000001s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{"tokens"=>{"IcGmhFYKGPbTo3O51eGX1A"=>{"token"=>"$2a$10$JzMLaw1yuJv1F4gh40rhGe0L7eZZWPydlAnEWk3uxKw215IB5B6jG", "expiry"=>1478962528}, "J_8a1yuk5I...
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000515199s
+MONGODB | localhost:27017 | audio_app_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5814b855d838e4272ac11e13')}, "u"=>{"$set"=>{:locked_at=>nil, :locked_until=>nil}}, "multi"=>false, "upsert"=>false}], "ordered"=>true, "writeConcern"=>{:w=>1}}
+MONGODB | localhost:27017 | audio_app_development.update | SUCCEEDED | 0.000303642s
+Completed 200 OK in 214ms (Views: 0.8ms)
