@@ -8,7 +8,8 @@ define([
 	return Marionette.AppRouter.extend({
 		appRoutes: {
       '': 'index',
-      'register':'register'
+      'register':'register',
+      'confirmation_sent':'confirmation_sent'
 		}
 	});
 });

@@ -13,6 +13,7 @@ define([
 
     onRender: function(){
       console.log('in on render');
+      console.log(this.$el);
     },
 
     onShow: function(){
