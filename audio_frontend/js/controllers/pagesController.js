@@ -6,10 +6,13 @@ define([
   'views/pages/signInView',
   'views/pages/signUpView',
   'views/pages/confirmationSentView',
+  'views/pages/errorView',
   'layouts/pagesLayout',
   'pubsub-js',
-  'jToker'
-], function ($ ,app, Marionette, SignInView, SignUpView,ConfirmationSentView ,PageLayout,PubSub,Auth) {
+  'jToker',
+  'text!templates/error_template.html',
+  'underscore'
+], function ($ ,app, Marionette, SignInView, SignUpView,ConfirmationSentView, ErrorView,PageLayout,PubSub,Auth,ErrorTemplate,_) {
 	'use strict';
 
   var pageLayout = new PageLayout();
@@ -26,9 +29,11 @@ define([
         console.log('In route /register');
         pageLayout.render();
         var signUpView = new SignUpView();
+        var confirmationSentView = new ConfirmationSentView();
+        var errorView = new ErrorView({template: _.template(ErrorTemplate,{msg:"error"})});
+        console.log(errorView);
         pageLayout.main.show(signUpView);
         signUpView.onSubmitSignUp = function(){
-
           console.log('click!');
           var email = $("#inputEmail").val();
           var password = $("#inputPassword").val();
@@ -37,12 +42,14 @@ define([
           console.log(password);
           console.log(password_confirmation);
           PubSub.subscribe('auth.emailRegistration.success', function(ev, msg) {
-            alert('Check your email!');
+            //alert('Check your email!');
+            pageLayout.main.show(confirmationSentView);
             console.log(msg);
           });
           PubSub.subscribe('auth.emailRegistration.error', function(ev, msg) {
             alert('There was a error submitting your request. Please try again!');
             console.log(msg);
+            pageLayout.message.show(errorView);
           });
 
           Auth.configure({

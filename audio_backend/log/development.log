@@ -4214,3 +4214,308 @@ redirect-url: http://localhost:8004/register
 <a href=http://localhost:3000/auth/confirmation?confirmation_token=ty9rut9GaZhNg-j4dmsx&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
 
 Completed 200 OK in 1455ms (Views: 0.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 10:37:38 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash.s@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8005/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash.s@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000407145s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash.s@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000387717s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash.s@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000344399s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"f96d0542d014b136cd7b53b9669506f9c3feda15149e0fd9592077a4d2ed3a19"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000335288s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('58200c1ad838e41c5bc96a3c'), "encrypted_password"=>"$2a$10$GwQTd7z2DOqGet3DSxjEduhccpaXtYppSi8ZIpjPa6ri.Bck75caK", "sign_in_count"=>0, "uid"=>"akash.s@example.com", "tokens"=>{}, "email"=>"akash...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.00035867699999999995s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 8.1ms
+
+Sent mail to akash.s@example.com (3.1ms)
+Date: Mon, 07 Nov 2016 10:37:38 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: akash.s@example.com
+Message-ID: <58200c1acf7b0_1c5b1d4784895859@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8005/register
+
+<p>Welcome akash.s@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=R4m8i9FS9HXvUJ74xz37&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 118ms (Views: 0.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 10:41:05 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8005/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.00038259599999999997s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000354284s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00035786000000000005s
+Completed 403 Forbidden in 102ms (Views: 0.5ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 10:41:18 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash+2@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8005/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash+2@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000401148s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash+2@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00030109399999999996s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash+2@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000275288s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"5b03e64c0c8f2181d297617f397e99deb8340a3d3dc080f601bc1229e7503017"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000286807s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('58200cf6d838e41c5bc96a3e'), "encrypted_password"=>"$2a$10$P.DlBoGY7NSpeMMPuA.oYumtZ5jiYf6s7lyQv5zjWngLFAzIDJPae", "sign_in_count"=>0, "uid"=>"akash+2@example.com", "tokens"=>{}, "email"=>"akash...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.00032336s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 7.6ms
+
+Sent mail to akash+2@example.com (272.3ms)
+Date: Mon, 07 Nov 2016 10:41:18 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: akash+2@example.com
+Message-ID: <58200cf673770_1c5bcf8230959fd@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8005/register
+
+<p>Welcome akash+2@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=juvCPQsBv_AsR7ahXyMQ&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 384ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 10:43:00 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash+3@example.co,", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8006/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash+3@example.co,"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000381938s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash+3@example.co,"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00034100600000000003s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash+3@example.co,"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00033614399999999997s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"b812be2f2ca7c37109af52db02eb151a25043480a5bf80cc654e3859adfc0274"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00034373s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('58200d5cd838e41c5bc96a3f'), "encrypted_password"=>"$2a$10$BCCvbp9Ktc6xeZf9z3fw8eOfy5vJAMOsgCbxwZabAhffdL4zbrMru", "sign_in_count"=>0, "uid"=>"akash+3@example.co,", "tokens"=>{}, "email"=>"akash...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.00032795700000000003s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 8.0ms
+
+Sent mail to akash+3@example.co (4.8ms)
+Date: Mon, 07 Nov 2016 10:43:00 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: akash+3@example.co
+Message-ID: <58200d5c7bcaf_1c5b3f8fb8b201d89603a@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8006/register
+
+<p>Welcome akash+3@example.co,!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=YcP-5z1bJbB9kKFAd18w&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 118ms (Views: 0.4ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 10:43:52 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash+4@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8006/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash+4@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000410461s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash+4@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00028565s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash+4@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000303696s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"c8ac755e71e0972a03acf5c7ebb85fcbcddb8a66223d85ef483b6aa58c133f99"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000321559s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('58200d90d838e41c5bc96a40'), "encrypted_password"=>"$2a$10$pOUSFJAIcXYMdruREAW9/e0Lq6NQBIKvbQuy5JsV7c8yHq26.kK/u", "sign_in_count"=>0, "uid"=>"akash+4@example.com", "tokens"=>{}, "email"=>"akash...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.000339215s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 7.9ms
+
+Sent mail to akash+4@example.com (5.1ms)
+Date: Mon, 07 Nov 2016 10:43:52 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: akash+4@example.com
+Message-ID: <58200d90bf8fc_1c5b3f8fb8b709f89617d@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8006/register
+
+<p>Welcome akash+4@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=TVpDY2h5tRbZm2B1De2W&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 117ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 11:03:23 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash+7@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8007/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash+7@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000399273s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash+7@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000345154s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash+7@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00029645699999999997s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"confirmation_token"=>"b76cc6e5f83f7dfc67f92d8cb8de7a9fbb0d1a0ef254d42be963a6595000d451"}, "limit"=>1, "singleBatch"=>true}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000304927s
+MONGODB | localhost:27017 | audio_app_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>BSON::ObjectId('58201223d838e41c5bc96a41'), "encrypted_password"=>"$2a$10$cU6FmR.WT3VLaRBnZ.wpWeBHwCk2iqC1KIGh4EsEffpGdZK3In7tm", "sign_in_count"=>0, "uid"=>"akash+7@example.com", "tokens"=>{}, "email"=>"akash...
+MONGODB | localhost:27017 | audio_app_development.insert | SUCCEEDED | 0.000303094s
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 7.4ms
+
+Sent mail to akash+7@example.com (4.8ms)
+Date: Mon, 07 Nov 2016 11:03:23 +0530
+From: no-reply@audio.com
+Reply-To: no-reply@audio.com
+To: akash+7@example.com
+Message-ID: <5820122344f43_1c5b3f8fb8c201789628e@amura-Latitude-3460.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+client-config: default
+redirect-url: http://localhost:8007/register
+
+<p>Welcome akash+7@example.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<a href=http://localhost:3000/auth/confirmation?confirmation_token=QZzDjUc8CmZmGk_22FSt&amp;redirect_url=http%3A%2F%2Flocalhost%3A3000%2F >Confirm</a> 
+
+Completed 200 OK in 120ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 11:03:41 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8007/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000377049s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00032878700000000004s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000320867s
+Completed 403 Forbidden in 107ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 11:06:11 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8008/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash@example.com"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.00041253700000000004s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000330159s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash@example.com"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000340963s
+Completed 403 Forbidden in 104ms (Views: 0.6ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 11:11:00 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8009/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000491253s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00084515s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.00048423199999999997s
+Completed 403 Forbidden in 14ms (Views: 0.7ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 11:11:47 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"akash.s", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8010/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"akash.s"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000928723s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"akash.s"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0005777110000000001s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"akash.s"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000422509s
+Completed 403 Forbidden in 15ms (Views: 0.9ms)
+
+
+Started POST "/auth" for 127.0.0.1 at 2016-11-07 11:13:00 +0530
+Processing by DeviseTokenAuth::RegistrationsController#create as */*
+  Parameters: {"email"=>"a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "confirm_success_url"=>"http://localhost:8011/register"}
+Can't verify CSRF token authenticity
+Unpermitted parameter: confirm_success_url
+Unpermitted parameter: confirm_success_url
+MONGODB | localhost:27017 | audio_app_development.count | STARTED | {"count"=>"users", "query"=>{"provider"=>"email", "email"=>"a"}}
+MONGODB | localhost:27017 | audio_app_development.count | SUCCEEDED | 0.000531139s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"a"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.0012570130000000002s
+MONGODB | localhost:27017 | audio_app_development.find | STARTED | {"find"=>"users", "filter"=>{"uid"=>"a"}, "projection"=>{"_id"=>1}, "limit"=>1}
+MONGODB | localhost:27017 | audio_app_development.find | SUCCEEDED | 0.000458407s
+Completed 403 Forbidden in 16ms (Views: 0.7ms)
